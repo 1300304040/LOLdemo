@@ -1,1001 +1,484 @@
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <title>不是所有的页面都叫京东</title>
     <link rel="stylesheet" href="css/base.css"/>
-    <link rel="stylesheet" href="css/lol.css"/>
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/lol.js"></script>
-    <script src="js/videoData.js"></script>
-    <title>LOL</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script>
+        window.onload = function(){
+            var mask = document.getElementById("mask");
+            var box = document.getElementById("box");
+            var close_all = document.getElementById("close_all");
+            login.onclick = function (){
+                mask.style.display = "block";
+                box.style.display = "block";
+            }
+            close_all.onclick = function(){
+                mask.style.display = "none";
+                box.style.display = "none";
+            }
+
+        }
+    </script>
 </head>
 <body>
-<!--header部分开始-->
-<div class="header">
-    <div class="header-box clearfix">
-        <div class="header-nav w">
-            <h1><a href="#" class="logo"></a></h1>
-            <img id="move-img" src="images/nabg2.png" alt=""/>
-            <ul class="header-nav-ul" id="header_nav_ul">
-                <li><a href="#">官方首页</a></li>
-                <li><a href="#">游戏资料</a></li>
-                <li><a href="#">商城/合作</a></li>
-                <li><a href="#">用户互动</a></li>
-                <li><a href="#">赛事中心</a></li>
-                <li><a href="#">自助系统</a></li>
-                <li><a href="#">个人中心</a></li>
-            </ul>
-        </div>
-    </div>
-    <!--隐藏部分ul-->
-    <div class="hide-ul" id="hide_ul">
-        <div class="hide-ul-box w">
-            <ul class="first-ul">
-                <li><a href="#">新手指引</a></li>
-                <li><a href="#">资料库</a></li>
-                <li><a href="#">攻略中心</a></li>
-                <li><a href="#">模式实验室</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">点券充值</a></li>
-                <li><a href="#">道聚城</a></li>
-                <li><a href="#">周边商城</a></li>
-                <li><a href="#">LOL信用卡</a></li>
-                <li><a href="#">网吧特权</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">在线客服</a></li>
-                <li><a href="#">活动中心</a></li>
-                <li><a href="#">官方论坛</a></li>
-                <li><a href="#">官方微信</a></li>
-                <li><a href="#">官方微博</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">LPL职业联赛</a></li>
-                <li><a href="#">甲级职业联赛</a></li>
-                <li><a href="#">德玛西亚杯</a></li>
-                <li><a href="#">城市英雄争霸赛</a></li>
-                <li><a href="#">高校联赛</a></li>
-                <li><a href="#">王者峡谷</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">封号查询</a></li>
-                <li><a href="#">体验服务申请</a></li>
-                <li><a href="#">拂去其状态查询</a></li>
-                <li><a href="#">裁决之镰</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">个人资料</a></li>
-                <li><a href="#">英雄与皮肤</a></li>
-                <li><a href="#">战绩历史</a></li>
-            </ul>
-        </div>
-    </div>
-        <div class="banner w">
-            <div class="font">
-                2016战斗之夜
-                <p>战斗之夜，三天狂欢无界限</p>
-            </div>
-            <a class="check" href="#">查看详情</a>
-            <div class="game-copyright">
-                <p>
-                    当前游戏版本：<span>Ver 6.17</span>
-                </p>
-                <a href="#">版本详情</a>
-            </div>
-            <div class="download">
-                <a class="down-game" href="#"></a>
-                <a class="new-man public" href="#">
-                    <i></i>
-                    <p>新手礼包</p>
-                    <span>新手任务好礼</span>
-                </a>
-                <a class="video public" href="#">
-                    <i></i>
-                    <p>视频中心</p>
-                    <span>最新最全视频</span>
-                </a>
-                <a class="competition public" href="#">
-                    <i></i>
-                    <p>赛事中心</p>
-                    <span>权威赛事咨询</span>
-                </a>
-                <a class="game-data public" href="#">
-                    <i></i>
-                    <p>游戏资料</p>
-                    <span>海量英雄资料</span>
-                </a>
-                <a class="personal public" href="#">
-                    <i></i>
-                    <p>个人中心</p>
-                    <span>个人权威资料</span>
-                </a>
-                <div class="login">
-                    <div class="pic"></div>
-                    <div class="login-font">
-                        <p class="p1">亲爱的召唤师请您,欢迎<a id="loginApi">登录</a></p>
-                        <p class="p2">登录后查看自己的英雄联盟游戏信息，包括
-                            <br/>
-                            <span>召唤师等级、段位信息、游戏胜场数、账户信息、声望值 等。</span>
-                        </p>
-                    </div>
-                </div>
-        </div>
-    </div>
-    <div class="login-bar" id="login_bar">
-        <div class="remove">
-            <div class="close"></div>
-        </div>
-        <div class="title">
-            <p class="num-login">账号密码登录</p>
-            <p class="recommend">推荐使用<span>快速安全登录</span>，防止盗号。</p>
-            <div class="tip">
-                <!--<span class="alarm"></span>-->
-            </div>
-        </div>
-        <div class="content">
-            <input  type="text" id="username" placeholder="支持QQ账号/邮箱号/手机号/登录"/>
-          
-            <input id="password" type="password" placeholder="密码"/>
-            <input id="sub" value="登录" type="submit"/> 
-            <div id="clear_content">
-                <a href="#"></a>
-            </div>
-            <div id="clear_psw">
-                <a href="#"></a>
-            </div>
-        </div>
-        <div class="bottom">
-            <a class="link" href="#">忘记密码?</a>
-            <span class="dotted">|</span>
-            <a class="link" href="#">注册新账号</a>
-            <span class="dotted">|</span>
-            <a class="link" href="#">意见反馈</a>
-        </div>
-    </div>
-    <div class="mask" id="overlay"></div>
+<!--京东的头部导航开始-->
+<div id="mask"></div>
+<div id="box">
+    <span id="close_all">×</span>
 </div>
-<!--header部分结束-->
-<!--主题部分开始-->
-<div class="main w clearfix">
-    <div class="home-mod-l fl">
-        <div class="home-mod prom">
-           <ul class="slide">
-               <li class="item"><a href="#"><img src="images/shen11.jpg" alt=""/></a></li>
-               <li class="item"><a href="#"><img src="images/shen22.jpg" alt=""/></a></li>
-               <li class="item"><a href="#"><img src="images/shen33.jpg" alt=""/></a></li>
-               <li class="item"><a href="#"><img src="images/shen44.jpg" alt=""/></a></li>
-               <li class="item"><a href="#"><img src="images/shen55.jpg" alt=""/></a></li>
-           </ul>
-           <span class="trigger-item">战斗之夜</span>
-           <span class="trigger-item">改名卡限时折扣</span>
-           <span class="trigger-item">天下英雄第30期</span>
-           <span class="trigger-item">定制款月饼冰淇淋</span>
-           <span class="trigger-item">活出我们的精彩</span>
-       </div>
-        <div class="home-video prom">
-            <div class="hd">
-                <h2 class="home-title"> 
-                    <i class="icon-video"></i>
-                    视频中心
-                </h2>
-                <a class="txt-more" href="#">
-                    进入视频中心
-                </a>
-                <a class="txt-more" href="#">
-                    <i class="icon-submit"></i>
-                    我要投稿
-                </a>
-            </div>
-            <div class="bd clearfix">
-                <div class="tab">
-                    <ul id="tab_li">
-                        <li class="current">最新视频</li>
-                        <li>解说视频</li>
-                        <li>周免英雄</li>
-                        <li>赛事视频</li>
-                        <li>趣味锦集</li>
-                        <li>官方视频</li>
-                    </ul>
-
-                </div>
-                <div class="content-video">
-                    <ul class="list-video"></ul>
-                    <ul class="list-video"></ul>
-                    <ul class="list-video"></ul>
-                    <ul class="list-video"></ul>
-                    <ul class="list-video"></ul>
-                    <ul class="list-video"></ul>
-                        <!--<li>-->
-                            <!--<a class="v-link" href="#">-->
-                                <!--<img src="images/7.jpg" alt=""/>-->
-                                <!--<span class="shadow1"></span>-->
-                                <!--<span class="v-meta">-->
-                                    <!--<span class="v-time">02:25</span>-->
-                                <!--</span>-->
-                                <!--<span class="shadow2"></span>-->
-                                <!--<i class="icon-v"></i>-->
-                            <!--</a>-->
-                            <!--<h5 class="v-name">-->
-                                <!--<a href="#">-->
-                                    <!--英雄训练营男枪：隐藏神技逆向R最全拉野细节-->
-                                <!--</a>-->
-                            <!--</h5>-->
-                        <!--</li>-->
-                </div>
-                <a href="#" class="video-more-link">
-                    再显示<em>8</em>个视频
-                </a>
-            </div>
-
-        </div>
-        <div class="home-match prom">
-            <div class="hd clearfix">
-                <h2 class="home-title">
-                    <i class="icon-match"></i>
-                    赛事中心
-                </h2>
-                <a class="txt-more" href="#">进入赛事中心</a>
-            </div>
-            <div class="bd">
-                <div class="tab">
-                    <ul class="hero-tab match-tab">
-                        <li class="current">职业联赛</li>
-                        <li>甲级职业联赛</li>
-                        <li>德玛西亚杯</li>
-                        <li>高校联赛</li>
-                        <li>城市英雄争霸赛</li>
-                        <li>王者峡谷</li>
-                    </ul>
-                </div>
-                <div id="matchContent">
-                <div class="home-match-content">
-                    <div class="home-match-slide fl">
-                        <a href="#"><img src="images/Jevent_1.jpg" alt=""/></a>
-                        <a class="match-page" href="#">进入赛事页面</a>
-                    </div>
-                    <div class="home-match-news">
-                        <div class="news-top">
-                           <div class="event-tit">
-                               2016英雄联盟职业联赛夏季赛
-                           </div>
-                            <p class="meta">时间：2016-05-26-2016-08-07</p>
-                            <p class="meta">地点：上海虹桥天地演艺中心3F（多功能厅）</p>
-                            <p class="event-num">
-                                <em class="fbig">4200</em>
-                                万人关注
-                            </p>
-                        </div>
-                        <ul class="news-list">
-                            <li class="news-li"><a href="#">Bengi联手“侯爷"征战LPL前路几何? <span class="date">12/28</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛新生报道 你最期待谁？ <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">RNG成为全华班 轮换制或成常态 <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛战队变化 重视新秀韩援锐减 <span class="date">12/26</span></a></li>
-                            <li class="news-li"><a href="#">春季赛战队趋于均衡 LPL强弱格局或被打破 <span class="date">12/23</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛分组看点 Uzi面临顶尖AD挑战 <span class="date">12/22</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="home-match-content">
-                    <div class="home-match-slide fl">
-                        <a href="#"><img src="images/Jevent_2.jpg" alt=""/></a>
-                        <a class="match-page" href="#">进入赛事页面</a>
-                    </div>
-                    <div class="home-match-news">
-                        <div class="news-top">
-                           <div class="event-tit">
-                               英雄联盟甲级职业联赛夏季赛
-                           </div>
-                            <p class="meta">时间：2016-05-26-2016-08-07</p>
-                            <p class="meta">地点：上海虹桥天地演艺中心3F（多功能厅）</p>
-                            <p class="event-num">
-                                <em class="fbig">800</em>
-                                万人关注
-                            </p>
-                        </div>
-                        <ul class="news-list">
-                            <li class="news-li"><a href="#">Bengi联手“侯爷"征战LPL前路几何? <span class="date">12/28</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛新生报道 你最期待谁？ <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">RNG成为全华班 轮换制或成常态 <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛战队变化 重视新秀韩援锐减 <span class="date">12/26</span></a></li>
-                            <li class="news-li"><a href="#">春季赛战队趋于均衡 LPL强弱格局或被打破 <span class="date">12/23</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛分组看点 Uzi面临顶尖AD挑战 <span class="date">12/22</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="home-match-content">
-                    <div class="home-match-slide fl">
-                        <a href="#"><img src="images/Jevent_3.jpg" alt=""/></a>
-                        <a class="match-page" href="#">进入赛事页面</a>
-                    </div>
-                    <div class="home-match-news">
-                        <div class="news-top">
-                            <div class="event-tit">
-                                2016年德玛西亚杯
-                            </div>
-                            <p class="meta">时间：2016-05-26-2016-08-07</p>
-                            <p class="meta">地点：上海虹桥天地演艺中心3F（多功能厅）</p>
-                            <p class="event-num">
-                                <em class="fbig">700</em>
-                                万人关注
-                            </p>
-                        </div>
-                        <ul class="news-list">
-                            <li class="news-li"><a href="#">Bengi联手“侯爷"征战LPL前路几何? <span class="date">12/28</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛新生报道 你最期待谁？ <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">RNG成为全华班 轮换制或成常态 <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛战队变化 重视新秀韩援锐减 <span class="date">12/26</span></a></li>
-                            <li class="news-li"><a href="#">春季赛战队趋于均衡 LPL强弱格局或被打破 <span class="date">12/23</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛分组看点 Uzi面临顶尖AD挑战 <span class="date">12/22</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="home-match-content">
-                    <div class="home-match-slide fl">
-                        <a href="#"><img src="images/Jevent_4.jpg" alt=""/></a>
-                        <a class="match-page" href="#">进入赛事页面</a>
-                    </div>
-                    <div class="home-match-news">
-                        <div class="news-top">
-                            <div class="event-tit">
-                                第五届全国高校联赛
-                            </div>
-                            <p class="meta">时间：2016-05-26-2016-08-07</p>
-                            <p class="meta">地点：上海虹桥天地演艺中心3F（多功能厅）</p>
-                            <p class="event-num">
-                                <em class="fbig">300</em>
-                                万人关注
-                            </p>
-                        </div>
-                        <ul class="news-list">
-                            <li class="news-li"><a href="#">Bengi联手“侯爷"征战LPL前路几何? <span class="date">12/28</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛新生报道 你最期待谁？ <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">RNG成为全华班 轮换制或成常态 <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛战队变化 重视新秀韩援锐减 <span class="date">12/26</span></a></li>
-                            <li class="news-li"><a href="#">春季赛战队趋于均衡 LPL强弱格局或被打破 <span class="date">12/23</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛分组看点 Uzi面临顶尖AD挑战 <span class="date">12/22</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="home-match-content">
-                    <div class="home-match-slide fl">
-                        <a href="#"><img src="images/Jevent_5.jpg" alt=""/></a>
-                        <a class="match-page" href="#">进入赛事页面</a>
-                    </div>
-                    <div class="home-match-news">
-                        <div class="news-top">
-                            <div class="event-tit">
-                                第十一届城市英雄争霸赛
-                            </div>
-                            <p class="meta">时间：2016-05-26-2016-08-07</p>
-                            <p class="meta">地点：上海虹桥天地演艺中心3F（多功能厅）</p>
-                            <p class="event-num">
-                                <em class="fbig">500</em>
-                                万人关注
-                            </p>
-                        </div>
-                        <ul class="news-list">
-                            <li class="news-li"><a href="#">Bengi联手“侯爷"征战LPL前路几何? <span class="date">12/28</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛新生报道 你最期待谁？ <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">RNG成为全华班 轮换制或成常态 <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛战队变化 重视新秀韩援锐减 <span class="date">12/26</span></a></li>
-                            <li class="news-li"><a href="#">春季赛战队趋于均衡 LPL强弱格局或被打破 <span class="date">12/23</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛分组看点 Uzi面临顶尖AD挑战 <span class="date">12/22</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="home-match-content">
-                    <div class="home-match-slide fl">
-                        <a href="#"><img src="images/Jevent_6.jpg" alt=""/></a>
-                        <a class="match-page" href="#">进入赛事页面</a>
-                    </div>
-                    <div class="home-match-news">
-                        <div class="news-top">
-                            <div class="event-tit">
-                                王者峡谷
-                            </div>
-                            <p class="meta">时间：2016-05-26-2016-08-07</p>
-                            <p class="meta">地点：上海虹桥天地演艺中心3F（多功能厅）</p>
-                            <p class="event-num">
-                                <em class="fbig">300</em>
-                                万人关注
-                            </p>
-                        </div>
-                        <ul class="news-list">
-                            <li class="news-li"><a href="#">Bengi联手“侯爷"征战LPL前路几何? <span class="date">12/28</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛新生报道 你最期待谁？ <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">RNG成为全华班 轮换制或成常态 <span class="date">12/27</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛战队变化 重视新秀韩援锐减 <span class="date">12/26</span></a></li>
-                            <li class="news-li"><a href="#">春季赛战队趋于均衡 LPL强弱格局或被打破 <span class="date">12/23</span></a></li>
-                            <li class="news-li"><a href="#">LPL春季赛分组看点 Uzi面临顶尖AD挑战 <span class="date">12/22</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                </div>
+<div class="shortcut">
+    <div class="w">
+        <div class="fl">
+            <div class="dt"> 送至：北京
+                <i><s>◇</s></i>
             </div>
         </div>
-        <div class="home-online prom">
-            <div class="hd clearfix">
-                <div class="home-title">
-                    <i class="icon-online"></i>
-                    客服专区
-                </div>
-                <a href="#" class="more"></a>
-                <a href="#" class="txt-more">QQ在线客服</a>
-            </div>
-            <div class="bd">
-                <div class="tab">
-                    <ul class="tab-nav fl">
-                        <li class="current">自助服务</li>
-                        <li>常见问题列表</li>
-                    </ul>
-                    <div class="other-online fr">
-                        <a href="#">登录相关</a>
-                        <a href="#">游戏相关</a>
-                        <a href="#">电脑及其他问题</a>
-                    </div>
-                </div>
-                <ul class="kf-list clearfix">
-                    <li id="kfNav_1">
-                    <ul class="txt-list">
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）晋级助手</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）封号申诉相关问题</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）如何查看皮肤特效</a></li>
-                        <li class="txt-li"><a href="#">新版本匹配机制FAQ</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）限定皮肤获得方法</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）常见规则</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）点券充错大区了怎么办？</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）游戏商城黑屏</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）聊天框弹出中奖信息/举报虚假信息的说明</a></li>
-                        <li class="txt-li"><a href="#">英雄联盟（LOL）对电脑配置有什么要求？</a></li>
-                    </ul>
-                </li>
-                    <li id="kfNav_2" style="display: none">
-                        <ul class="txt-list">
-                            <li class="txt-li"><a href="#">英雄联盟冲值充错大区了怎么办？【该自助工具目前无法使用】</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）排位赛/晋级赛（胜点、段位、级位）扣分规则</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）登录提示“登录错误，登录服务器未响</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）登录成功后提示：服务器连接异常，即将退出</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）PVP.NET断开连接的处理方法</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）登录成功后提示：未知错误，未知的错误发生了</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）登录时发生ActionScript错误</a></li>
-                            <li class="txt-li"><a href="#">英雄联盟（LOL）Adobe Air 错误提示</a></li>
-                            <li class="txt-li"><a href="#">登录时，提示：服务器正忙，请稍后再试（登录错误）</a></li>
-                            <li class="txt-li"><a href="#">拉起游戏时提示：连接失败，无法连接服务器</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="home-mod-r fr">
-        <div class="home-news clearfix prom">
-            <div class="topNav">
-                <ul>
-                    <li class="current">综合</li>
-                    <li>公告</li>
-                    <li>赛事</li>
-                    <li>论坛</li>
-                </ul>
-                <a class="more" href="#">more</a>
-            </div>
-            <div class="mid-content">
-            <div class="content" style="display: block;">
-                <div class="title">
-                    五周年限定皮肤 电玩阿狸即将上线！
-                </div>
-                <ul>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            《创作吧！我要当主角》获奖名单
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">新闻</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content" style="display: none;">
-                <div class="title">
-                    部分网通大区网络波动公告
-                </div>
-                <ul>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            《创作吧！我要当主角》获奖名单
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">公告</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content" style="display: none;">
-                <div class="title">
-                    五周年狂欢盛典门票随赠皮肤领取开启公告
-                </div>
-                <ul>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            《创作吧！我要当主角》获奖名单
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">赛事</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content" style="display: none">
-                <div class="title">
-                    部分网通大区网络波动公告
-                </div>
-                <ul>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            《创作吧！我要当主角》获奖名单
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="link-tit" href="#">
-                            <span class="new-type">论坛</span>
-                            五周年狂欢盛典门票随赠皮肤领取开启公告
-                            <span class="date">08/31</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            </div>
-            <p class="vote-tips">
-                【问拳头第六期】客户端更新展望
-            </p>
-        </div>
-        <div class="home-hero home-video clearfix prom">
-            <div class="hd clearfix">
-                <h2 class="home-title">
-                    <i class="icon-hero"></i>
-                    英雄/皮肤
-                </h2>
-                <a class="txt-more" href="#">全部英雄</a>
-                <a class="txt-more" href="#">我的英雄与皮肤</a>
-                <i class="icon-video"></i>
-            </div>
-            <div class="bd">
-                <div class="tab hero-tab">
-                    <ul id="hero_tab">
-                        <li class="current">周免英雄</li>
-                        <li>最新英雄</li>
-                        <li>最新皮肤</li>
-                    </ul>
-                </div>
-                <div id="hero">
-                    <div class="hero-content">
-                        <div class="free-list">
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-0.jpg" alt=""/>-->
-                                <!--<span class="bg">-->
-                                    <!--<span class="name">木木</span>-->
-                                <!--</span>-->
-                            <!--</a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-1.jpg" alt=""/>-->
-                                <!--<span class="bg">-->
-                                    <!--<span class="name">剑姬</span>-->
-                                <!--</span>-->
-                            <!--</a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-2.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-3.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-4.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-5.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-6.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-7.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-8.jpg" alt=""/></a>-->
-                            <!--<a class="hero" href="#"><img src="images/lyj-hero1-9.jpg" alt=""/></a>-->
-                        </div>
-                        <div class="free-time">免费时间：2016-12-23 至 2016-12-30</div>
-                    </div>
-                    <div class="new-hero hero-content">
-                        <div class="new-hero-list">
-                            <!--<a href="#"><img src="images/lyj-hero2-0.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero2-1.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero2-2.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero2-3.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero2-4.jpg" alt=""/></a>-->
-                        </div>
-                    </div>
-                    <div class="hero-content new-skin">
-                        <div class="new-hero-list">
-                            <!--<a href="#"><img src="images/lyj-hero3-0.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero3-1.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero3-2.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero3-3.jpg" alt=""/></a>-->
-                            <!--<a href="#"><img src="images/lyj-hero3-4.jpg" alt=""/></a>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="home-quick prom clearfix">
-            <div class="hd">
-                <h2 class="home-title">
-                    <i class="icon-enter"></i>
-                    快速入口
-                </h2>
-            </div>
-            <div class="bd">
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon"></i>
-                        点亮图标
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-popularity"></i>
-                        声望系统
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-cdk"></i>
-                        CDK兑换
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-style"></i>
-                        模拟实验室
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-gameInfo"></i>
-                        游戏资料
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-weibi"></i>
-                        官方微博
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-bbs"></i>
-                        玩家论坛
-                    </a>
-                </div>
-                <div class="home-quick-content">
-                    <a href="#">
-                        <i class="quick-icon-online"></i>
-                        在线客服
-                    </a>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="home-active prom clearfix">
-            <div class="hd clearfix">
-                <h2 class="home-title">
-                    <i class="active-icon"></i>
-                    活动中心
-                </h2>
-                <a href="#" class="txt-more">进入活动中心</a>
-            </div>
-            <div class="bd">
-                <div class="act-list fl">
-                    <div class="act-img">
-                        <img src="images/active-center.png" alt=""/>
-                    </div>
-                    <div class="bg"><p class="act-name">备战·季前赛，每周完成任务领奖励！</p></div>
-                    <a href="#" class="acr-info">
-                    <h5 class="acr-tit2">活动简介</h5>
-                    <p class="act-txt">参与“备战·季前赛”活动，完成指定任务，免费赢取期限皮肤、期限英雄、金币卡奖励！</p>
-                    <span class="acr-link">查看活动详情</span>
-                </a>
-                </div>
-                <ul class="act-txt-list fr">
-                    <li class="act-li">
-                        <a href="#" class="act-tit">
-                            <em>2017官方赛事解说招募启动</em>
-                            <span class="tip">已结束</span>
-                        </a>
-                    </li>
-                    <li class="act-li txt-list-now">
-                        <a href="#" class="act-tit">
-                            <em>老兵不死，只是凋零。统治战场正式退役</em>
-                            <span class="tip">进行中</span>
-                        </a>
-                    </li>
-                    <li class="act-li txt-list-now">
-                        <a href="#" class="act-tit">
-                            <em>英雄联盟全新混音专辑--《战歌》</em>
-                            <span class="tip">进行中</span>
-                        </a>
-                    </li>
-                    <li class="act-li txt-list-now">
-                        <a href="#" class="act-tit">
-                            <em>五杀乐队头像领取</em>
-                            <span class="tip">进行中</span>
-                        </a>
-                    </li>
-                    <li class="act-li txt-list-now">
-                        <a href="#" class="act-tit">
-                            <em>全国高校排行榜</em>
-                            <span class="tip">进行中</span>
-                        </a>
-                    </li>
-                    <li class="act-li txt-list-now">
-                        <a href="#" class="act-tit">
-                            <em>2016赛季个人数据回顾，晒出我的成绩单</em>
-                            <span class="tip">进行中</span>
-                        </a>
-                    </li>
-                    <li class="act-li">
-                        <a href="#" class="act-tit">
-                            <em>寻找大元素使拉克丝，赢取奖励！</em>
-                            <span class="tip">已结束</span>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-        <div class="home-ad">
-            <a href="#"><img src="images/pic-qt.jpg" alt=""/></a>
-        </div>
-
-    </div>
-</div>
-<!--footer部分开始-->
-<div class="footer">
-    <div class="footer-inner w clearfix">
-        <div class="footer-normal">
-            <i class="footerSpr"></i>
-            <p class="fh">英雄，我们在这里等你</p>
-            <p>
-                扫描下载《英雄联盟》官方APP，
-                <br/>
-                获取最新最全的官方动态
-            </p>
-        </div>
-        <div class="footer-normal">
-            <p class="fh"> 温馨提示：本游戏适合18岁(含)以上玩家娱乐</p>
-            <ul class="footer-rule">
-                <li>抵制不良游戏</li>
-                <li>拒绝盗版游戏</li>
-                <li>注意自我保护</li>
-                <li>谨防受骗上当</li>
-                <li>适度游戏益脑</li>
-                <li>沉迷游戏伤身</li>
-                <li>合理安排时间</li>
-                <li>享受健康生活</li>
-            </ul>
-        </div>
-        <div class="footer-mt">
-            <div class="footer-mt-link">
-                <p class="fl">英雄联盟 官方合作媒体</p>
-                <i class="fl icon-arrow-down"></i>
-            </div>
-            <div class="footer-mt-site">
-                <a href="#">英雄联盟大咖</a>
-                <a href="#">要我玩</a>
-                <a href="#">木木不哭</a>
-                <a href="#">叶子猪</a>
-                <a href="#">兔玩</a>
-                <a href="#">特玩</a>
-                <a href="#">52PK游戏网</a>
-                <a href="#">锐派</a>
-                <a href="#">玩加赛事</a>
-                <a href="#">电玩巴士</a>
-                <a href="#">爱拍游戏</a>
-                <a href="#">U9</a>
-                <a href="#">pentaQ</a>
-                <a href="#">掌游宝</a>
-                <a href="#">七煌</a>
-                <a href="#">太平洋</a>
-                <a href="#">178游戏网</a>
-                <a href="#">电子竞技杂志</a>
-            </div>
-        </div>
-        <div class="footer-f">
-            <a class="fl tc-game" href="#"></a>
-            <ul class="fr footer-list">
+        <div class="fr">
+            <ul>
                 <li>
-                    <a class="link" href="#">腾讯互动娱乐</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">服务条款</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">广告服务</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">腾讯游戏招聘</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">腾讯游戏客服</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">游戏活动</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">游戏地图</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">商务合作</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">腾讯网</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">网站导航</a>
+                    <a href="#" id="login">你好，请登录</a> &nbsp;&nbsp;
+                    <a href="#" class="col-red">免费注册</a>
                 </li>
-                <li>COPYRIGHT © 1998 - 2016 TENCENT. ALL RIGHTS RESERVED.
-                    <a class="link fr" href="#">腾讯公司版权所有</a>
+                <li class="line"></li>
+                <li>我的订单</li>
+                <li class="line"></li>
+                <li class="fore">我的京东
+                    <i><s>◇</s></i>
                 </li>
-                <li>© 2012 Riot Games, Inc. ALL RIGHTS RESERVED.</li>
-                <li>
-                    文网进字[2011] 004号 & ISBN 978-7-89989-145-2
-                    <span class="bar">|</span>
-                    <a class="link" href="#">新出网证（粤）字010号</a>
-                    <span class="bar">|</span>
-                    <a class="link" href="#">粤网文[2014]0633-233号</a>
+                <li class="line"></li>
+                <li>京东会员</li>
+                <li class="line"></li>
+                <li>企业采购</li>
+                <li class="line"></li>
+                <li class="fore tel-jd">
+                    <em class="tel"></em>
+                    手机京东
+                    <i><s>◇</s></i>
+                </li>
+                <li class="line"></li>
+                <li class="fore">
+                    关注京东
+                    <i><s>◇</s></i>
+                </li>
+                <li class="line"></li>
+                <li class="fore">
+                    客户服务
+                    <i><s>◇</s></i>
+                </li>
+                <li class="line"></li>
+                <li class="fore">
+                    网站导航
+                    <i><s>◇</s></i>
                 </li>
             </ul>
         </div>
     </div>
+
 </div>
-<!--小火箭部分-->
-<div class="rocket">
-    <img src="images/rocket.png" alt=""/>
+<!--京东头部导航结束-->
+<!--京东的topBanner部分-->
+<div  id="TopBanner" class="topbanner">
+    <div class="w tp">
+        <img src="images/topbanner.jpg" alt=""/>
+        <a href="javascript:;" id="close_banner" class="close-banner"></a>
+    </div>
+</div>
+<script>
+    var TopBanner = document.getElementById("TopBanner");
+    var close_banner = document.getElementById("close_banner");
+    close_banner.onclick = function(){
+        TopBanner.style.display = "none";
+    }
+</script>
+<!--京东的topBanner部分 end-->
+
+<div class="w clearfix">
+    <div class="logo">
+        <a href="http://www.jd.com" target="_blank" class="jd-a" title="叮咚">京东</a>
+        <div class="db11">
+            <a href="#"><img src="images/dong.gif" alt=""/></a>
+        </div>
+    </div>
+    <div class="search">
+        <input type="text" name="" id="" value="图书开抢"/>
+        <button>搜索</button>
+    </div>
+    <div class="car">
+        <a href="#">俺的购物车</a>
+        <span class="icon1"></span>
+        <span class="icon2">></span>
+        <span class="icon3">8</span>
+    </div>
+    <div class="hotwords">
+        <a href="#" class="col-red">11月11天</a>
+        <a href="#">11.11秒杀</a>
+        <a href="#">买2免1</a>
+        <a href="#">Note5 黑</a>
+        <a href="#">12期免息</a>
+        <a href="#">智能科技</a>
+        <a href="#">清仓</a>
+        <a href="#">国际服饰</a>
+        <a href="#">优惠券</a>
+    </div>
+</div>
+
+<!--nav 部分开始-->
+
+<div class="jd-nav">
+    <div class="w">
+        <div class="dropdown">
+            <div class="dt">
+                <a href="#">全部商品分类</a>
+            </div>
+            <div class="dd">
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>家用电器</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+                <div class="items">
+                    <h3>手机、数码、京东通信</h3>
+                    <span>></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="navitems">
+            <ul>
+                <li><a href="#">服装城</a></li>
+                <li><a href="#">美妆馆</a></li>
+                <li><a href="#">超市</a></li>
+                <li><a href="#">全球购</a></li>
+                <li><a href="#">闪购</a></li>
+                <li class="new"><a href="#">团购</a></li>
+                <li><a href="#">拍卖</a></li>
+                <li><a href="#">金融</a></li>
+                <li><a href="#">智能</a></li>
+            </ul>
+        </div>
+        <div class="bike">
+            <a href="#"></a>
+        </div>
+    </div>
+</div>
+<!--banner部分-->
+<div class="banner604">
+    <a href="#">
+
+    </a>
+</div>
+<div class="w main clearfix">
+    <div  class="slider">
+        <a href="#"><img id="cp" src="images/slider1.jpg" alt=""/></a>
+        <div class="circle">
+            <ul>
+                <li class="current">1</li>
+                <li id="li2">2</li>
+                <li id="li3">3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+        <div class="arrow">
+            <a href="javascript:;" class="arrow-l"><</a>
+            <a href="javascript:;" class="arrow-r">></a>
+        </div>
+    </div>
+    <script>
+        var li2 = document.getElementById("li2");
+        var li3 = document.getElementById("li3");
+        var cp = document.getElementById("cp");
+        li2.onmouseover = function(){
+            cp.src = "images/22.jpg";
+        };
+        li3.onmouseover = function(){
+            cp.src = "images/33.jpg";
+        }
+    </script>
+    <div class="news">
+        <div class="jd-news">
+            <div class="dt">
+                <h3>京东快报</h3>
+                <a href="#">更多></a>
+            </div>
+            <div class="dd">
+                <ul>
+                    <li><a href="#"><span>[特惠]</span>1元秒杀</a></li>
+                    <li><a href="#"><span>[公告]</span>母婴类APP【京东宝宝】上线</a></li>
+                    <li><a href="#"><span>[特惠]</span>美的品牌日 APP嗨购大放“价”</a></li>
+                    <li><a href="#"><span>[公告]</span>京东深入蒙牛生产基地进行质检</a></li>
+                    <li><a href="#"><span>[特惠]</span>白条购家电 24期免息！</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lifeSer">
+            <div class="dt">
+                <h3>生活服务</h3>
+            </div>
+            <div class="dd" id="iconsprite">
+                <ul>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon2 song">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon3">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+                    <li class="lifeSer-icon1">
+                        <a href="#">
+                            <i></i>
+                            <span>话费</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+        var lis = document.getElementById("iconsprite").getElementsByTagName("i");
+        for(var i=0;i<=lis.length;i++){
+            lis[i].style.backgroundPosition = "0"+(-i*25)+"px";
+
+        }
+
+</script>
+<!--双十一某个活动-->
+<div class="w toDays clearfix">
+    <div class="night">
+        <div class="night-l fl">
+            <img src="images/night.jpg" alt=""/>
+        </div>
+        <div class="night-r">
+            <ul>
+                <li><a href="#"><img src="images/1.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/2.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/3.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/4.jpg" alt=""/></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--页面底部开始-->
+<div class="jd-footer">
+    <div class="service">  <!--服务模块-->
+        <div class="slogen">
+            <span class="item slogen1">
+                <img src="images/slogen1.png" alt=""/>
+            </span>
+            <span class="item slogen2">
+                <img src="images/slogen2.png" alt=""/>
+            </span>
+            <span class="item slogen3">
+                <img src="images/slogen3.png" alt=""/>
+            </span>
+            <span class="item slogen4">
+                <img src="images/slogen4.png" alt=""/>
+            </span>
+
+        </div>
+        <div class="w shopping clearfix">
+            <dl>
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">会员介绍</a></dd>
+                <dd><a href="#">生活旅行/团购</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">大家电</a></dd>
+                <dd><a href="#">联系客服</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">会员介绍</a></dd>
+                <dd><a href="#">生活旅行/团购</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">大家电</a></dd>
+                <dd><a href="#">联系客服</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">会员介绍</a></dd>
+                <dd><a href="#">生活旅行/团购</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">大家电</a></dd>
+                <dd><a href="#">联系客服</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">会员介绍</a></dd>
+                <dd><a href="#">生活旅行/团购</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">大家电</a></dd>
+                <dd><a href="#">联系客服</a></dd>
+            </dl>
+            <dl>
+                <dt><a href="#">购物指南</a></dt>
+                <dd><a href="#">购物流程</a></dd>
+                <dd><a href="#">会员介绍</a></dd>
+                <dd><a href="#">生活旅行/团购</a></dd>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">大家电</a></dd>
+                <dd><a href="#">联系客服</a></dd>
+            </dl>
+            <div class="coverage">
+                <div class="dt">京东自营覆盖区县</div>
+                <div class="dd">
+                    <p> 京东已向全国2357个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+                    <p class="looklook"><a href="#">查看详情 ></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w againw">
+        <div class="links">
+            <a href="#">关于我们</a>|
+            <a href="#">联系我们</a>|
+            <a href="#">商家入驻</a>|
+            <a href="#">营销中心</a>|
+            <a href="#">手机京东</a>|
+            <a href="#">友情链接</a>|
+            <a href="#">销售联盟</a>|
+            <a href="#">京东社区</a>|
+            <a href="#">京东公益</a>|
+            <a href="#">English Site</a>|
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="copyright">
+            北京市公安局朝阳分局备案编号110105014669  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-经营性-2014-0008  |  新出发京零 字第大120007号<br />
+            音像制品经营许可证苏宿批005号  |  出版物经营许可证编号新出发(苏)批字第N-012号  |  互联网出版许可证编号新出网证(京)字150号<br />
+            网络文化经营许可证京网文[2014]2148-348号  违法和不良信息举报电话：4006561155  Copyright © 2004-2015  京东JD.com 版权所有<br />
+            京东旗下网站：360TOP  拍拍网  网银在线
+        </div>
+        <div class="message">
+            <a href="#"><img src="images/mess.png" alt=""/></a>
+            <a href="#"><img src="images/mess2.png" alt=""/></a>
+            <a href="#"><img src="images/mess3.png" alt=""/></a>
+            <a href="#"><img src="images/mess4.png" alt=""/></a>
+            <a href="#"><img src="images/mess5.png" alt=""/></a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
